@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // connect to database
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mysql://root:qwerty@localhost:3306/joga_mysql');
+const sequelize = new Sequelize('mysql://root:qwerty@localhost:3306/joga_sequelize');
 
 // test database connection
 sequelize
