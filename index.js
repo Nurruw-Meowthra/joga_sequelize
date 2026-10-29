@@ -20,10 +20,9 @@ sequelize
         console.error('Unable to connect to the database:', err);
     });
 
-// simple router
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+// using routes and controllers
+const articleRoutes = require('./routes/article');
+app.use('/', articleRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
