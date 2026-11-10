@@ -14,6 +14,22 @@ const getAllArticles = async (req, res) => {
     });
 };
 
+// show article by that slug
+const getArticleBySlug = (req, res) => {
+  models.Article.findOne({
+    where: {
+      slug: req.params.slug
+    }
+  })
+    .then(article => {
+      return res.status(200).json({ article});
+  })
+    .catch(error => {
+      return res.status(500).send(error.message);
+  });
+}
+
 module.exports = {
-  getAllArticles
+  getAllArticles,
+  getArticleBySlug
 };
