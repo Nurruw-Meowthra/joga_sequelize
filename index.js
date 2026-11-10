@@ -25,6 +25,9 @@ const articleRoutes = require('./routes/article');
 app.use('/', articleRoutes);
 app.use('/article', articleRoutes);
 
+const authorRoutes = require('./routes/author');
+app.use('/author', authorRoutes);
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

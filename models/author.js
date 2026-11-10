@@ -1,5 +1,8 @@
 'use strict';
-const { Model } = require('sequelize');
+const {
+  Model
+} = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Author extends Model {
     static associate(models) {
@@ -8,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
+
   Author.init({
     id: {
       type: DataTypes.INTEGER,
@@ -15,10 +19,14 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       allowNull: false
     },
-    name: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Author',
   });
+
   return Author;
 };
